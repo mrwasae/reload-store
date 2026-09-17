@@ -21,7 +21,8 @@
     --line: rgba(246,248,252,0.14);
   }
   *{box-sizing:border-box; margin:0; padding:0;}
-  html{scroll-behavior:smooth;}
+  html{scroll-behavior:smooth; overflow-x:hidden;}
+  html, body{max-width:100%;}
   
   /* ANIMATED MESH BACKGROUND */
   body{
@@ -87,7 +88,7 @@
 
   /* FULL SCREEN MOBILE NAV */
   .mobile-nav {
-    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    position: fixed; top: 0; left: 0; width: 100%; height: 100dvh;
     background: rgba(6, 11, 30, 0.98);
     backdrop-filter: blur(20px);
     z-index: 105;
@@ -137,7 +138,7 @@
     display:inline-block; position:relative;
     width:0.78em; height:0.78em; vertical-align:-0.06em;
   }
-  .hero h1 .reload-o svg{width:100%; height:100%; animation:spin 6s linear infinite;}
+  .hero h1 .reload-o svg{width:100%; height:100%;}
   .hero-tag{
     margin-top:22px; font-size:clamp(1rem,2.4vw,1.35rem); color:var(--ice); opacity:0;
     font-weight:500; animation:fadeUp .9s ease .4s forwards;
@@ -158,14 +159,7 @@
     position: relative; overflow: hidden;
     box-shadow:0 10px 35px rgba(79,123,255,.25);
   }
-  .btn-primary::after {
-    content: ''; position: absolute; top: -50%; left: -100%; width: 50%; height: 200%;
-    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
-    transform: skewX(-25deg);
-    animation: shine 4s infinite;
-  }
-  @keyframes shine { 0% { left: -100%; } 20% { left: 200%; } 100% { left: 200%; } }
-  .btn-primary:hover{transform:translateY(-4px) scale(1.02); background:#fff; box-shadow:0 16px 45px rgba(79,123,255,.45);}
+  .btn-primary:hover{transform:translateY(-4px); background:#fff; box-shadow:0 16px 45px rgba(79,123,255,.45);}
   
   .btn-ghost{
     border:1px solid var(--line); color:var(--white); font-weight:600; font-size:0.92rem;
@@ -181,7 +175,7 @@
     font-family:'JetBrains Mono'; font-size:0.7rem; letter-spacing:0.2em; color:rgba(246,248,252,0.4);
     display:flex; flex-direction:column; align-items:center; gap:8px;
   }
-  .scroll-cue .stem{width:1px; height:28px; background:rgba(246,248,252,0.35); animation:pulse 2s ease-in-out infinite;}
+  .scroll-cue .stem{width:1px; height:28px; background:rgba(246,248,252,0.35);}
   @keyframes pulse{ 0%,100%{opacity:0.3; transform: scaleY(0.8);} 50%{opacity:1; transform: scaleY(1.2);} }
 
   /* ===== SIGNATURE: RELOAD SWITCHER ===== */
@@ -217,7 +211,7 @@
     border:none; text-align:left; width:100%; color:inherit; font-family:inherit;
     display:flex; flex-direction:column;
   }
-  .cat-card:hover, .cat-card.active{background:var(--blue-deep); transform: scale(1.02); z-index: 2; box-shadow: 0 20px 40px rgba(0,0,0,0.4);}
+  .cat-card:hover, .cat-card.active{background:var(--blue-deep); z-index: 2; box-shadow: 0 20px 40px rgba(0,0,0,0.4);}
   .cat-media{
     width:100%; aspect-ratio:4/3; overflow:hidden; position:relative;
     border-bottom:1px solid var(--line); background:var(--navy); flex-shrink:0;
@@ -283,17 +277,13 @@
   .sister-txt p{color:var(--ice); max-width:480px; font-size:0.95rem; line-height:1.6;}
   .sister .btn-primary{background:var(--white); color: var(--navy);}
 
-  /* ===== INFINITE MARQUEE ===== */
+  /* ===== STRIP BANNER ===== */
   .marquee-container {
-    width: 100vw; overflow: hidden; background: var(--blue-bright);
-    color: var(--black); padding: 16px 0; white-space: nowrap;
+    width: 100%; overflow: hidden; background: var(--blue-bright);
+    color: var(--black); padding: 16px 6vw; text-align:center;
     font-family: 'JetBrains Mono'; font-weight: 700; text-transform: uppercase;
-    font-size: 0.85rem; letter-spacing: 0.1em;
+    font-size: 0.78rem; letter-spacing: 0.08em; line-height:1.7;
   }
-  .marquee-content {
-    display: inline-block; animation: scrollText 20s linear infinite;
-  }
-  @keyframes scrollText { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
   /* ===== FOOTER ===== */
   footer{padding:70px 6vw 40px; background:var(--black);}
@@ -354,10 +344,8 @@
   /* PREMIUM GEN-Z MOTION - Background Orbits */
   ::selection{background:var(--blue-bright);color:var(--black)}
   .hero:before,.hero:after{content:"";position:absolute;border-radius:50%;pointer-events:none;filter:blur(3px)}
-  .hero:before{width:500px;height:500px;right:-200px;top:5%;border:1px solid rgba(79,123,255,.2);box-shadow:0 0 120px rgba(79,123,255,.15);animation:orbit 20s linear infinite}
-  .hero:after{width:300px;height:300px;left:-150px;bottom:5%;border:1px solid rgba(79,123,255,.15);animation:orbit2 16s linear infinite}
-  @keyframes orbit{to{transform:rotate(360deg) translateX(30px) rotate(-360deg)}}
-  @keyframes orbit2{to{transform:rotate(-360deg) translateX(20px) rotate(360deg)}}
+  .hero:before{width:500px;height:500px;right:-200px;top:5%;border:1px solid rgba(79,123,255,.2);box-shadow:0 0 120px rgba(79,123,255,.15)}
+  .hero:after{width:300px;height:300px;left:-150px;bottom:5%;border:1px solid rgba(79,123,255,.15)}
   .hero .reload-o svg{filter:drop-shadow(0 0 15px rgba(79,123,255,.5))}
   
   .reveal{opacity:0;transform:translateY(35px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
@@ -561,34 +549,34 @@
     </div>
     <div class="branch-grid">
       <div class="branch-card">
-        <p class="branch-market">Bangladesh Market</p>
+        <p class="branch-market">Bholakpur, Musheerabad</p>
         <h3 class="branch-name disp">RELOAD — Branch 1</h3>
-        <p class="branch-note">Full apparel, footwear and accessories range. <span class="fill-me">[add shop number]</span></p>
-        <a class="branch-directions mono" href="https://www.google.com/maps/search/RELOAD+Bangladesh+Market+Hyderabad" target="_blank" rel="noopener">GET DIRECTIONS</a>
+        <p class="branch-note">Shop No. 1-4-639, Near Humera Hotel, Bholakpur, Musheerabad, Hyderabad, Telangana 500080.</p>
+        <a class="branch-directions mono" href="https://maps.app.goo.gl/wtMZfFddytkzRMEA9" target="_blank" rel="noopener">GET DIRECTIONS</a>
       </div>
       <div class="branch-card">
-        <p class="branch-market">Bangladesh Market</p>
+        <p class="branch-market">Bholakpur, Musheerabad</p>
         <h3 class="branch-name disp">RELOAD — Branch 2</h3>
-        <p class="branch-note">Full apparel, footwear and accessories range. <span class="fill-me">[add shop number]</span></p>
-        <a class="branch-directions mono" href="https://www.google.com/maps/search/RELOAD+Bangladesh+Market+Hyderabad" target="_blank" rel="noopener">GET DIRECTIONS</a>
+        <p class="branch-note">Shop No. 1-4-639, Near Humera Hotel, Bholakpur, Musheerabad, Hyderabad, Telangana 500080.</p>
+        <a class="branch-directions mono" href="https://maps.app.goo.gl/wtMZfFddytkzRMEA9" target="_blank" rel="noopener">GET DIRECTIONS</a>
       </div>
       <div class="branch-card">
-        <p class="branch-market">Bangladesh Market</p>
+        <p class="branch-market">Bholakpur, Musheerabad</p>
         <h3 class="branch-name disp">RELOAD — Branch 3</h3>
-        <p class="branch-note">Full apparel, footwear and accessories range. <span class="fill-me">[add shop number]</span></p>
-        <a class="branch-directions mono" href="https://www.google.com/maps/search/RELOAD+Bangladesh+Market+Hyderabad" target="_blank" rel="noopener">GET DIRECTIONS</a>
+        <p class="branch-note">Shop No. 1-4-639, Near Humera Hotel, Bholakpur, Musheerabad, Hyderabad, Telangana 500080.</p>
+        <a class="branch-directions mono" href="https://maps.app.goo.gl/wtMZfFddytkzRMEA9" target="_blank" rel="noopener">GET DIRECTIONS</a>
       </div>
       <div class="branch-card">
-        <p class="branch-market">Bangladesh Market</p>
+        <p class="branch-market">Bholakpur, Musheerabad</p>
         <h3 class="branch-name disp">RELOAD — Branch 4</h3>
-        <p class="branch-note">Full apparel, footwear and accessories range. <span class="fill-me">[add shop number]</span></p>
-        <a class="branch-directions mono" href="https://www.google.com/maps/search/RELOAD+Bangladesh+Market+Hyderabad" target="_blank" rel="noopener">GET DIRECTIONS</a>
+        <p class="branch-note">Shop No. 1-4-639, Near Humera Hotel, Bholakpur, Musheerabad, Hyderabad, Telangana 500080.</p>
+        <a class="branch-directions mono" href="https://maps.app.goo.gl/wtMZfFddytkzRMEA9" target="_blank" rel="noopener">GET DIRECTIONS</a>
       </div>
       <div class="branch-card">
-        <p class="branch-market">Raheem Market, Zamistapur</p>
+        <p class="branch-market">Daira Market, Musheerabad</p>
         <h3 class="branch-name disp">RELOAD — Branch 5</h3>
-        <p class="branch-note">Full apparel, footwear and accessories range. <span class="fill-me">[add shop number]</span></p>
-        <a class="branch-directions mono" href="https://www.google.com/maps/search/RELOAD+Raheem+Market+Zamistapur+Hyderabad" target="_blank" rel="noopener">GET DIRECTIONS</a>
+        <p class="branch-note">1-7-432/1/1, Sagarlal Hospital Lane, Near Bharani Oil Depot, Daira Market, Musheerabad, Bakaram, Telangana 500020.</p>
+        <a class="branch-directions mono" href="https://maps.app.goo.gl/TyG53QsrPDP6bxrS9?g_st=ac" target="_blank" rel="noopener">GET DIRECTIONS</a>
       </div>
     </div>
   </section>
@@ -602,11 +590,10 @@
     <a class="btn-primary" href="https://wa.me/919010096144" target="_blank" rel="noopener">Ask About Baby Store</a>
   </section>
 
-  <!-- ===== MARQUEE ===== -->
+  <!-- ===== BANNER STRIP ===== -->
   <div class="marquee-container">
     <span class="marquee-content">
-      UPDATE YOUR FASHION &nbsp;&bull;&nbsp; 5 BRANCHES IN HYDERABAD &nbsp;&bull;&nbsp; M.A. RASHEED AND SONS &nbsp;&bull;&nbsp; WHATSAPP +91 90100 96144 &nbsp;&bull;&nbsp;
-      UPDATE YOUR FASHION &nbsp;&bull;&nbsp; 5 BRANCHES IN HYDERABAD &nbsp;&bull;&nbsp; M.A. RASHEED AND SONS &nbsp;&bull;&nbsp; WHATSAPP +91 90100 96144 &nbsp;&bull;&nbsp;
+      UPDATE YOUR FASHION &nbsp;&bull;&nbsp; 5 BRANCHES IN HYDERABAD &nbsp;&bull;&nbsp; M.A. RASHEED AND SONS &nbsp;&bull;&nbsp; WHATSAPP +91 90100 96144
     </span>
   </div>
 
@@ -642,8 +629,8 @@
     </div>
     <div class="foot-col">
       <h4>Visit</h4>
-      <p>Bangladesh Market, Hyderabad</p>
-      <p>Raheem Market, Zamistapur</p>
+      <p>Bholakpur, Musheerabad</p>
+      <p>Daira Market, Musheerabad</p>
     </div>
   </div>
   <div class="foot-bottom">
