@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>RELOAD — Update Your Fashion</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E⚡%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/png" href="/favicon.png?v=3">
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#000;--fg:#f2f6fa;--mut:#9a9488;--blue:#e9bb5b;--blue2:#f4d58d;--line:rgba(233,187,91,.22);--glass:rgba(255,255,255,.045);--glassb:rgba(255,255,255,.09);
+:root{--bg:#000;--fg:#f2f6fa;--mut:#9a9488;--blue:#e9bb5b;--blue2:#f4d58d;--numblue:#3fc6ff;--numblue2:#9fe6ff;--line:rgba(233,187,91,.22);--glass:rgba(255,255,255,.045);--glassb:rgba(255,255,255,.09);
   --hf:'Orbitron','Segoe UI',Arial,sans-serif;--bf:'Rajdhani','Segoe UI',Arial,sans-serif;
   box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#000;--fg:#f2f6fa}}
@@ -63,7 +63,7 @@ h1{font:900 clamp(40px,10vw,110px)/1 var(--hf);text-transform:uppercase;backgrou
 .btn:hover{transform:translateY(-3px);box-shadow:0 8px 32px rgba(233,187,91,.55),inset 0 1px 0 rgba(255,255,255,.5)}
 /* chapter break */
 .brk{min-height:90vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 7vw;will-change:opacity,transform}
-.brk .n{font:900 clamp(90px,26vw,300px)/.9 var(--hf);color:transparent;-webkit-text-stroke:1px rgba(233,187,91,.45)}
+.brk .n{font:900 clamp(90px,26vw,300px)/.9 var(--hf);background:linear-gradient(180deg,var(--numblue2),var(--numblue) 60%,#0a6fa8);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-stroke:1px rgba(159,230,255,.9);filter:drop-shadow(0 0 18px rgba(63,198,255,.55)) drop-shadow(0 0 46px rgba(63,198,255,.3))}
 .brk h2{font:900 clamp(28px,6vw,64px) var(--hf);text-transform:uppercase;margin-top:-.1em;letter-spacing:2px}
 .brk p{color:var(--mut);letter-spacing:4px;text-transform:uppercase;font-size:14px;margin-top:12px}
 /* pinned chapter */
@@ -74,7 +74,7 @@ h1{font:900 clamp(40px,10vw,110px)/1 var(--hf);text-transform:uppercase;backgrou
 canvas{position:relative;display:block;mix-blend-mode:normal;filter:drop-shadow(0 18px 34px rgba(0,0,0,.55));-webkit-mask-image:linear-gradient(#0000,#000 9%,#000 91%,#0000);mask-image:linear-gradient(#0000,#000 9%,#000 91%,#0000)}
 .info{position:absolute;left:5vw;right:5vw;bottom:calc(env(safe-area-inset-bottom,0px) + 34px);display:flex;justify-content:space-between;align-items:flex-end;gap:16px;pointer-events:none}
 .info>div:first-child{background:var(--glass);border:1px solid var(--glassb);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-radius:18px;padding:16px 22px;pointer-events:auto}
-.idx{font:500 11px var(--hf);letter-spacing:3px;color:var(--blue);margin-bottom:8px;opacity:.9}
+.idx{font:700 11px var(--hf);letter-spacing:3px;color:var(--numblue2);margin-bottom:8px;opacity:1;text-shadow:0 0 10px rgba(63,198,255,.85),0 0 22px rgba(63,198,255,.5)}
 .nm{font:900 clamp(22px,4.6vw,46px) var(--hf);text-transform:uppercase;line-height:1.05}
 .tg{color:var(--mut);letter-spacing:2px;text-transform:uppercase;font-size:14px;margin-top:6px}
 .sw{animation:up .5s ease both}@keyframes up{from{opacity:0;transform:translateY(14px)}}
